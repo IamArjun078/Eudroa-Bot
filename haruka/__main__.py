@@ -24,11 +24,11 @@ PM_START = """Hey there! My name is {} - I'm here to help you manage your groups
 
 Click Help button to find out more about how to use me to my full potential.
 
-Join My Support Group [Nancy Momoland Bot Support](http://t.me/Nancy_Momoland_support_group) if you need any support or help.
+Join My Support Group [Eudora Bot Support](http://t.me/Eudora_support_group) if you need any support or help.
 
-Don't Forget To CheckOut [SpiderMan](http://t.me/Spiderman_ProBot) 
+Don't Forget To CheckOut [Eudora](http://t.me/EudorasBot) 
 
-Want to add me to your group? Click here! [Click Here](http://t.me/SpiderMan_ProBot?startgroup=true)
+Want to add me to your group? Click here! [Click Here](http://t.me/EudorasBot?startgroup=true)
 """
 
 
