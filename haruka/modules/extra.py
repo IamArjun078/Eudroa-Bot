@@ -248,6 +248,32 @@ def table(bot: Bot, update: Update):
                 update.message.reply_text("Send money bsdk to buy new table to flip")
             else:
                 update.message.reply_text("Go do some work instead of flippin tables you helpless fagit.")
+
+ 
+
+
+
+ def tts(bot: Bot, update: Update, args):
+    current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
+    filename = datetime.now().strftime("%d%m%y-%H%M%S%f")
+    reply = " ".join(args)
+    update.message.chat.send_action(ChatAction.RECORD_AUDIO)
+    lang="ml"
+    tts = gTTS(reply, lang)
+    tts.save("k.mp3")
+    with open("k.mp3", "rb") as f:
+        linelist = list(f)
+        linecount = len(linelist)
+    if linecount == 1:
+        update.message.chat.send_action(ChatAction.RECORD_AUDIO)
+        lang = "en"
+        tts = gTTS(reply, lang)
+        tts.save("k.mp3")
+    with open("k.mp3", "rb") as speech:
+        update.message.reply_voice(speech, quote=False)
+               
+
+
 		
 __help__ = """
  - /table : get flip/unflip :v.
@@ -269,6 +295,8 @@ BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
+TTS_HANDLER = DisableAbleCommandHandler("tts", tts)
+
 
 dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
@@ -277,3 +305,5 @@ dispatcher.add_handler(BLUETEXT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(TTS_HANDLER)
